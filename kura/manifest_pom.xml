@@ -265,6 +265,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -305,6 +308,7 @@
 					<version>2.9</version>
 					<configuration>
 						<doctitle>Kura ${project.version}</doctitle>
+						<additionalparam>-Xdoclint:none</additionalparam>
 						<!-- Default configuration for all reports -->
 						<skip>false</skip>
 						<links>
