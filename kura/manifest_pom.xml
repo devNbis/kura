@@ -10,11 +10,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.kura</groupId>
 	<artifactId>kura</artifactId>
-	<version>1.2.0-SNAPSHOT</version>
+	<version>1.1.1</version>
 
 	<packaging>pom</packaging>
 
-        <!-- comment -->
 	<modules>
 		<module>target-definition</module>
 		<module>org.eclipse.kura.api</module>
@@ -42,7 +41,6 @@
 		<module>org.eclipse.kura.protocol.modbus</module>
 		<module>org.eclipse.kura.protocol.modbus.test</module>
 		<module>org.eclipse.kura.emulator</module>
-		<module>org.eclipse.kura.lwm2m</module>
 		<module>examples</module>
 	</modules>
 
@@ -309,8 +307,8 @@
 					<artifactId>maven-javadoc-plugin</artifactId>
 					<version>2.9</version>
 					<configuration>
-						<doctitle>Kura ${project.version}</doctitle>
 						<additionalparam>-Xdoclint:none</additionalparam>
+						<doctitle>Kura ${project.version}</doctitle>
 						<!-- Default configuration for all reports -->
 						<skip>false</skip>
 						<links>
@@ -360,3 +358,4 @@
 		<report>dependency-management</report> </reports> </reportSet> </reportSets> 
 		</plugin> </plugins> </reporting> -->
 </project>
+
