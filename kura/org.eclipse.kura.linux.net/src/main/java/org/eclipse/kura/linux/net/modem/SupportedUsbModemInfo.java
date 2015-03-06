@@ -26,7 +26,10 @@ public enum SupportedUsbModemInfo {
     Telit_CE910_DUAL("CE910-DUAL", "1bc7", "1011", 2, 0, 1, 1, Arrays.asList(ModemTechnologyType.EVDO), Arrays.asList(new Ce910ModemDriver())),
     Sierra_MC8775   ("MC8775", "1199", "6812", 3, 0, 2, 0, Arrays.asList(ModemTechnologyType.HSDPA), Arrays.asList(new UsbModemDriver("sierra"))),
     Sierra_MC8790   ("MC8790", "1199", "683c", 7, 0, 3, 4, Arrays.asList(ModemTechnologyType.HSDPA), Arrays.asList(new UsbModemDriver("sierra"))),
-    Sierra_USB598   ("USB598", "1199", "0025", 4, 1, 0, 0, Arrays.asList(ModemTechnologyType.EVDO), Arrays.asList(new UsbModemDriver("sierra")));
+    Sierra_USB598   ("USB598", "1199", "0025", 4, 1, 0, 0, Arrays.asList(ModemTechnologyType.EVDO), Arrays.asList(new UsbModemDriver("sierra"))),
+    Huawei_E173   ("E173", "12d1", "1436", 4, 2, 3, 0, Arrays.asList(ModemTechnologyType.HSDPA), Arrays.asList(new HuaweiOptionModemDriver("1436"))),
+    Huawei_E220  ("E220", "12d1", "1003", 2, 0, 1, 0, Arrays.asList(ModemTechnologyType.HSDPA), Arrays.asList(new HuaweiOptionModemDriver("1003"))),
+    Huawei_E620  ("E620", "12d1", "1001", 3, 0, 2, 0, Arrays.asList(ModemTechnologyType.HSDPA), Arrays.asList(new HuaweiOptionModemDriver("1001")));
 
     private String m_deviceName;
     private String m_vendorId;

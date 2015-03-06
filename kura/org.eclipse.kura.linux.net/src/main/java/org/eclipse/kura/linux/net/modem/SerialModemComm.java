@@ -16,7 +16,14 @@ import java.util.List;
 
 public enum SerialModemComm {
 	
-	MiniGateway("/dev/ttyO5", "/dev/ttyO5", 115200, 8, 1, 0);
+	MiniGateway("/dev/ttyO5", "/dev/ttyO5", 115200, 8, 1, 0),
+	/**
+	 * For using the /dev/ttyAMA0 Port the default configuration of the Raspberry must be changed.<br/>
+	 * remove at /boot/cmdline.txt the entry for console=ttyAMA0,115200<br/> 
+	 * remove or commented out at /etc/inittab the line<br/>
+	 * 2:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100  
+	 */
+	RaspberryPi ("/dev/ttyAMA0","/dev/ttyAMA0",115200, 8, 1,0);
 	
 	private String m_atPort;
 	private String m_dataPort;

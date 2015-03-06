@@ -47,6 +47,25 @@ public class SupportedSerialModems {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+				}else if((OS_VERSION != null && OS_VERSION.equals(modem.getOsImageName() + "_" + modem.getOsImageVersion())
+						&&	TARGET_NAME != null && TARGET_NAME.equals(KuraConstants.Raspberry_Pi.getTargetName()))) {
+						s_logger.info("Installing modem driver for {} ...", modem.getModemName());
+					try {
+
+							if (modem.getDriver().install() == 0) {
+								for (String modemModel : modem.getModemModels()) {
+									if (modemModel.equals(modem.getDriver().getModemModel())) {
+										s_logger.info("Driver for the {} modem has been installed" , modemModel);
+										modemReachable = true;
+										break breakout;
+									}
+								}
+							}
+							s_logger.warn("Failed to installing modem driver for {}", modem.getModemName());
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		}

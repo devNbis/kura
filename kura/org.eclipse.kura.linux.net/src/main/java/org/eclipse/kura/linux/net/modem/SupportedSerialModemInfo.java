@@ -21,7 +21,10 @@ public enum SupportedSerialModemInfo {
 
 	MiniGateway_Telit_HE910_NAD("HE910", new String[]{"HE910-NAD", "HE910-EUD"}, "Telit", KuraConstants.Mini_Gateway.getImageName(), 
 			KuraConstants.Mini_Gateway.getImageVersion(),  Arrays.asList(ModemTechnologyType.HSDPA), 
-			new SerialModemDriver("HE910", SerialModemComm.MiniGateway, "at+gmm\r\n"));
+			new SerialModemDriver("HE910", SerialModemComm.MiniGateway, "at+gmm\r\n")),
+	Raspberry_Telit_GE865("GE865", new String[]{"GL865-QUAD","GL865-QUAD V3", "GL868-DUAL","GL868-DUAL V3","GL864-QUAD","GL864-QUAD V2"}, "Telit", KuraConstants.Raspberry_Pi.getImageName(),
+					KuraConstants.Raspberry_Pi.getImageVersion(),  Arrays.asList(ModemTechnologyType.HSDPA),
+					new SerialModemDriver("GE865", SerialModemComm.RaspberryPi, "at+gmm\r\n"));
 	
 	private String m_modemName;
 	private String [] m_modemModels;

@@ -34,6 +34,11 @@ public class SupportedSerialModemsInfo {
 				s_logger.debug("obtaining serial modem info for {}", KuraConstants.Mini_Gateway.getImageName());
 				supportedSerialModemInfo = SupportedSerialModems.getModem(KuraConstants.Mini_Gateway.getImageName(), KuraConstants.Mini_Gateway.getImageVersion());
 				m_supportedSerialModemInfo = supportedSerialModemInfo;
+			}else if (OS_VERSION != null && OS_VERSION.equals(KuraConstants.Raspberry_Pi.getImageName() + "_" + KuraConstants.Raspberry_Pi.getImageVersion()) &&
+					TARGET_NAME != null && TARGET_NAME.equals(KuraConstants.Raspberry_Pi.getTargetName())) {
+				s_logger.debug("obtaining serial modem info for {}", KuraConstants.Raspberry_Pi.getImageName());
+				supportedSerialModemInfo = SupportedSerialModems.getModem(KuraConstants.Raspberry_Pi.getImageName(), KuraConstants.Raspberry_Pi.getImageVersion());
+				m_supportedSerialModemInfo = supportedSerialModemInfo;
 			}
 		}
 		return supportedSerialModemInfo;

@@ -15,6 +15,8 @@ import java.util.List;
 
 import org.eclipse.kura.linux.net.modem.SupportedUsbModemInfo;
 import org.eclipse.kura.linux.net.modem.UsbModemDriver;
+import org.eclipse.kura.net.admin.modem.huawei.exxx.HuaweiExxxConfigGenerator;
+import org.eclipse.kura.net.admin.modem.huawei.exxx.HuaweiExxxModemFactory;
 import org.eclipse.kura.net.admin.modem.sierra.mc87xx.SierraMc87xxConfigGenerator;
 import org.eclipse.kura.net.admin.modem.sierra.mc87xx.SierraMc87xxModemFactory;
 import org.eclipse.kura.net.admin.modem.sierra.usb598.SierraUsb598ConfigGenerator;
@@ -36,7 +38,10 @@ public class SupportedUsbModemsFactoryInfo {
 		Telit_LE910			(SupportedUsbModemInfo.Telit_LE910, TelitHe910ModemFactory.class, TelitHe910ConfigGenerator.class),
 		Sierra_MC8775	(SupportedUsbModemInfo.Sierra_MC8775, SierraMc87xxModemFactory.class, SierraMc87xxConfigGenerator.class),
 		Sierra_MC8790	(SupportedUsbModemInfo.Sierra_MC8790, SierraMc87xxModemFactory.class, SierraMc87xxConfigGenerator.class),
-		Sierra_USB598	(SupportedUsbModemInfo.Sierra_USB598, SierraUsb598ModemFactory.class, SierraUsb598ConfigGenerator.class);
+		Sierra_USB598	(SupportedUsbModemInfo.Sierra_USB598, SierraUsb598ModemFactory.class, SierraUsb598ConfigGenerator.class),
+		Huawei_E220(SupportedUsbModemInfo.Huawei_E220,HuaweiExxxModemFactory.class,HuaweiExxxConfigGenerator.class),
+		Huawei_E620(SupportedUsbModemInfo.Huawei_E620,HuaweiExxxModemFactory.class,HuaweiExxxConfigGenerator.class),
+	    Huawei_E173(SupportedUsbModemInfo.Huawei_E173,HuaweiExxxModemFactory.class,HuaweiExxxConfigGenerator.class);
 	
 		private SupportedUsbModemInfo m_usbModemInfo;
 		private Class<? extends CellularModemFactory> m_factoryClass;

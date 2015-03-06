@@ -599,6 +599,11 @@ public class NetworkServiceImpl implements NetworkService, EventHandler {
 		                }
 	                }
                 }
+				//insert an log entry if modem is found but the ports are different
+				else{
+					s_logger.warn("usbModem Found "+ usbModem.getVendorId()+":"+usbModem.getProductId() +" but Tty size:"+usbModem.getTtyDevs().size() +":"+ modemInfo.getNumTtyDevs() 
+							+" or block size"+usbModem.getBlockDevs().size() +":" +modemInfo.getNumBlockDevs()+" are different!");
+				}
             }
             
             /*

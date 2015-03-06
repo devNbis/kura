@@ -13,6 +13,8 @@ package org.eclipse.kura.net.admin.modem;
 
 import org.eclipse.kura.linux.net.modem.SupportedSerialModemInfo;
 import org.eclipse.kura.linux.net.modem.SupportedSerialModemsInfo;
+import org.eclipse.kura.net.admin.modem.telit.ge865.TelitGe865ConfigGenerator;
+import org.eclipse.kura.net.admin.modem.telit.ge865.TelitGe865ModemFactory;
 import org.eclipse.kura.net.admin.modem.telit.he910.TelitHe910ConfigGenerator;
 import org.eclipse.kura.net.admin.modem.telit.he910.TelitHe910ModemFactory;
 
@@ -20,7 +22,8 @@ public class SupportedSerialModemsFactoryInfo {
 
 	public enum SerialModemFactoryInfo {
 		
-		Telit_HE910_NAD	(SupportedSerialModemsInfo.getModem(), TelitHe910ModemFactory.class, TelitHe910ConfigGenerator.class);
+		Telit_HE910_NAD	(SupportedSerialModemsInfo.getModem(), TelitHe910ModemFactory.class, TelitHe910ConfigGenerator.class),
+		Telit_GE865	(SupportedSerialModemsInfo.getModem(), TelitGe865ModemFactory.class, TelitGe865ConfigGenerator.class);
 		
 		private SupportedSerialModemInfo m_serialModemInfo;
 		private Class<? extends CellularModemFactory> m_factoryClass;
